@@ -1,7 +1,7 @@
 # EVERLASTING
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,50:252525,100:000000&height=220&section=header&text=EVERLASTING&fontSize=58&fontColor=ffffff&fontAlignY=38&desc=Engineering%20Beyond%20Boundaries&descAlignY=60&descSize=18" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,45:171329,75:34205C,100:000000&height=220&section=header&text=EVERLASTING&fontSize=58&fontColor=ffffff&fontAlignY=38&desc=Engineering%20Beyond%20Boundaries%20%E2%80%A2%20EverlastingUc&descAlignY=60&descSize=18" width="100%" />
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=17&duration=2800&pause=800&color=FFFFFF&center=true&vCenter=true&width=700&lines=Building+things+that+should+exist.;Exploring+the+boundaries+of+computation.;Engineering+systems+from+the+ground+up.;Think.+Design.+Build.+Understand." alt="Animated introduction" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=17&duration=2800&pause=800&color=B69CFF&center=true&vCenter=true&width=700&lines=Building+things+that+should+exist.;Exploring+the+boundaries+of+computation.;Engineering+systems+from+the+ground+up.;Think.+Design.+Build.+Understand." alt="Animated introduction" />
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=EverlastingUc&style=flat-square&color=ffffff&label=PROFILE+VISITORS" alt="Profile visitors" />
+  <img src="https://komarev.com/ghpvc/?username=EverlastingUc&style=flat-square&color=9B7BFF&label=PROFILE+VISITORS" alt="Profile visitors" />
 </p>
 
 ---
@@ -1384,6 +1384,267 @@ A feature is not complete merely because it works once. Completion should accoun
 <p align="center">
   <sub>Designed with curiosity. Built with engineering. Powered by persistence.</sub>
 </p>
+
+
+---
+
+# 37 — VISUAL IDENTITY & PROFILE INTERFACE
+
+This profile uses a restrained terminal-inspired visual language: deep black, graphite, white typography, and electric violet accents. The goal is to make technical information easy to scan without turning the README into a wall of badges.
+
+### Interface Elements
+
+- Animated capsule-render header and footer
+- Typing SVG for a rotating engineering introduction
+- Compact identity panel and terminal-style profile card
+- Technology icons grouped by engineering domain
+- GitHub statistics, streak, and activity visualizations
+- Featured project cards with clear descriptions
+- Expandable details for long technical inventories
+- Consistent badge styles and accessible image descriptions
+
+### Visual Resources
+
+- [Capsule Render](https://github.com/kyechan99/capsule-render)
+- [Readme Typing SVG](https://github.com/DenverCoder1/readme-typing-svg)
+- [Shields.io](https://shields.io/)
+- [Skill Icons](https://skillicons.dev/)
+- [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats)
+
+---
+
+# 38 — NEOFETCH PROFILE TERMINAL
+
+A compact terminal-inspired snapshot of the person and engineering interests behind the repositories.
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:171329,100:080808&height=3&section=header" width="82%" alt="" />
+</p>
+
+```text
+                  EVERLASTINGUC
+        ┌──────────────────────────────────────┐
+        │  USER       : EverlastingUc          │
+        │  ROLE       : Independent Developer  │
+        │  INTERESTS  : Physics / CS / Systems │
+        │  FOCUS      : Build • Learn • Research│
+        │  APPROACH   : First principles       │
+        │  PLATFORM   : GitHub                 │
+        │  STATUS     : Always experimenting   │
+        └──────────────────────────────────────┘
+```
+
+<details>
+<summary><b>Open terminal session</b></summary>
+
+```bash
+$ whoami
+EverlastingUc
+
+$ cat /etc/interests
+programming-language-design
+operating-systems
+computational-physics
+artificial-intelligence
+mathematics
+software-architecture
+
+$ printf "Think. Design. Build. Understand.\n"
+Think. Design. Build. Understand.
+
+$ git remote -v
+https://github.com/EverlastingUc
+```
+
+</details>
+
+---
+
+# 39 — FEATURED PROJECT SHOWCASE
+
+A quick visual index of selected projects. These entries describe project direction; link each title to its canonical repository when that repository is public and ready.
+
+| Project | Engineering focus | Current description |
+|---|---|---|
+| **Valency** | Programming language | Beginner-friendly interpreted language and language-design work |
+| **Bootstune** | Systems programming | Low-level systems-language exploration |
+| **Luminosity OS** | Operating systems | Custom OS and kernel engineering |
+| **Relativity.js** | Computational physics | JavaScript toolkit for special-relativity calculations |
+| **Entropy** | Artificial intelligence | Neural-network learning and AI-engineering project |
+| **Malbolge Forge** | Language tooling | Rust VM, interpreter, debugger, and web visualizer |
+| **Team Samurai** | Web / automation | Esports community website and Discord automation |
+| **NinjaSlice.io** | Game development | Browser-based game concept and multiplayer systems |
+| **YCord** | Web tooling | Video-oriented creator tools and interaction concepts |
+
+### Project Card Links
+
+<p align="center">
+  <a href="https://github.com/EverlastingUc?tab=repositories">
+    <img src="https://img.shields.io/badge/OPEN-ALL%20PROJECTS-9B7BFF?style=for-the-badge&logo=github&logoColor=white" alt="Browse all repositories" />
+  </a>
+</p>
+
+<details>
+<summary><b>Project presentation checklist</b></summary>
+
+For every public project, aim to provide:
+
+- A concise one-line purpose
+- A clear status: planned, experimental, active, paused, or released
+- A working repository link
+- Screenshots or a live demo where useful
+- Technology stack and architecture
+- Installation and quick-start instructions
+- Tests, release notes, and known limitations
+- A roadmap that distinguishes completed work from future plans
+
+</details>
+
+---
+
+# 40 — SKILLS & TECHNOLOGY MATRIX
+
+Technology logos are visual navigation aids, not proficiency scores. The matrix separates areas of active engineering from technologies being explored.
+
+### Languages & Foundations
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=js,ts,python,cpp,rust,java,lua,html,css&theme=dark" alt="Programming language icons" />
+</p>
+
+### Frameworks, Runtime & Graphics
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=nodejs,react,nextjs,vite,threejs,wasm&theme=dark" alt="Framework and runtime icons" />
+</p>
+
+### Systems, Tools & Infrastructure
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=git,github,linux,docker,cloudflare,supabase,vercel,vscode&theme=dark" alt="Engineering tools and infrastructure icons" />
+</p>
+
+### Data & Storage
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=postgres,mongodb,redis,sqlite,firebase&theme=dark" alt="Database technology icons" />
+</p>
+
+| Engineering area | Evidence to showcase |
+|---|---|
+| Language engineering | Lexer, parser, interpreter, compiler, tests |
+| Systems programming | Memory, processes, runtime, kernel components |
+| Web engineering | Accessible interfaces, APIs, deployment |
+| AI engineering | Experiments, datasets, evaluation, reproducible runs |
+| Computational physics | Equations, numerical methods, validation |
+| DevOps | CI workflows, release automation, deployment controls |
+
+---
+
+# 41 — GITHUB WIDGET COLLECTION
+
+These cards are generated by external services and may occasionally be unavailable or rate-limited. They are visual summaries, not authoritative proof of engineering proficiency.
+
+### Profile Summary
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=EverlastingUc&theme=github_dark" width="100%" alt="GitHub profile summary" />
+</p>
+
+### Stats & Language Distribution
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=EverlastingUc&show_icons=true&rank_icon=github&hide_border=true&bg_color=00000000&title_color=B69CFF&text_color=CCCCCC&icon_color=B69CFF" height="170" alt="GitHub statistics card" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EverlastingUc&layout=donut&langs_count=8&hide_border=true&bg_color=00000000&title_color=B69CFF&text_color=CCCCCC" height="170" alt="Most used languages card" />
+</p>
+
+### Contribution Streak & Activity
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=EverlastingUc&theme=transparent&hide_border=true&ring=B69CFF&fire=B69CFF&currStreakLabel=B69CFF&sideLabels=AAAAAA&dates=777777" width="85%" alt="GitHub contribution streak" />
+</p>
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=EverlastingUc&bg_color=00000000&color=CCCCCC&line=B69CFF&point=FFFFFF&area=true&hide_border=true" width="100%" alt="GitHub contribution activity graph" />
+</p>
+
+### Trophies
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=EverlastingUc&theme=onedark&no-frame=true&no-bg=true&margin-w=6&column=4" width="100%" alt="GitHub profile trophies" />
+</p>
+
+---
+
+# 42 — DEVELOPER PRESENCE & CONTACT
+
+GitHub is the verified public contact point currently listed in this README. Add other platforms only when the profile URL is yours and ready for visitors.
+
+<p align="center">
+  <a href="https://github.com/EverlastingUc">
+    <img src="https://img.shields.io/badge/GitHub-EverlastingUc-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" />
+  </a>
+  <a href="https://github.com/EverlastingUc?tab=repositories">
+    <img src="https://img.shields.io/badge/Repositories-Explore-9B7BFF?style=for-the-badge&logo=github&logoColor=white" alt="GitHub repositories" />
+  </a>
+  <a href="https://gist.github.com/EverlastingUc">
+    <img src="https://img.shields.io/badge/Gists-Code%20Experiments-555555?style=for-the-badge&logo=github&logoColor=white" alt="GitHub gists" />
+  </a>
+</p>
+
+### Open to
+
+- Constructive technical discussions
+- Open-source collaboration
+- Bug reports and thoughtful feature proposals
+- Software architecture and systems discussions
+- Computational physics and research conversations
+
+---
+
+# 43 — SUPPORT & OPEN-SOURCE APPRECIATION
+
+The most useful support for independent engineering is practical:
+
+- Try a project and report reproducible bugs.
+- Improve documentation or examples.
+- Review an implementation and explain trade-offs.
+- Share a project with someone who may find it useful.
+- Contribute code through a focused pull request.
+- Provide constructive criticism backed by evidence.
+
+No donation or sponsorship link is listed until an official support page is configured. If a verified sponsorship profile becomes available, it can be added here.
+
+[Explore GitHub Sponsors](https://github.com/sponsors)
+
+---
+
+# 44 — DAILY QUOTE & ENGINEERING THOUGHT
+
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" width="88%" alt="Daily programming quote" />
+</p>
+
+> The objective is not to collect technologies. It is to understand systems deeply enough to build, explain, test, and improve them.
+
+---
+
+# 45 — PROFILE FOOTER & SIGNATURE
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,45:171329,75:34205C,100:000000&height=170&section=footer&text=THINK.%20DESIGN.%20BUILD.&fontSize=25&fontColor=FFFFFF&fontAlignY=65" width="100%" alt="Think Design Build footer" />
+</p>
+
+<p align="center">
+  <b>EVERLASTINGUC</b><br/>
+  <sub>Independent Engineering · Research · Continuous Learning</sub>
+</p>
+
+<p align="center">
+  <a href="https://github.com/EverlastingUc">
+    <img src="https://img.shields.io/badge/RETURN-TO%20GITHUB-9B7BFF?style=for-the-badge&logo=github&logoColor=white" alt="Return to GitHub profile" />
+  </a>
+</p>
+
 
 ---
 
