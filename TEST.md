@@ -48,6 +48,21 @@
 - [19 — Developer Utilities](#19--developer-utilities)
 - [20 — Global Community](#20--global-community)
 - [21 — Connect](#21--connect)
+- [22 — Technical Publications](#22--technical-publications)
+- [23 — Certifications & Credentials](#23--certifications-credentials)
+- [24 — Learning & Skill Development](#24--learning-skill-development)
+- [25 — Testing Laboratory](#25--testing-laboratory)
+- [26 — Performance Engineering](#26--performance-engineering)
+- [27 — API & Integration Hub](#27--api-integration-hub)
+- [28 — Cloud & Deployment Engineering](#28--cloud-deployment-engineering)
+- [29 — Package & Release Registry](#29--package-release-registry)
+- [30 — Database Engineering](#30--database-engineering)
+- [31 — Networking & Distributed Systems](#31--networking-distributed-systems)
+- [32 — Accessibility & User Experience](#32--accessibility-user-experience)
+- [33 — Technical Documentation](#33--technical-documentation)
+- [34 — Algorithms & Computer Science](#34--algorithms-computer-science)
+- [35 — Engineering Roadmap](#35--engineering-roadmap)
+- [36 — Principles & Standards](#36--principles-standards)
 
 ---
 
@@ -315,9 +330,11 @@ The 3D contribution skyline is generated through a separate GitHub Actions workf
 
 ### WakaTime Coding Statistics
 
+> Optional integration: replace `SET_YOUR_WAKATIME_USERNAME` with your public WakaTime username after enabling profile sharing. Until configured, this card is intentionally a setup placeholder.
+
 <p align="center">
   <a href="https://wakatime.com/">
-    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=YOUR_WAKATIME_USERNAME&layout=compact&hide_border=true&theme=transparent&title_color=ffffff&text_color=999999" width="80%" alt="WakaTime coding activity" />
+    <img src="https://img.shields.io/badge/WakaTime-Connect%20your%20account-000000?style=for-the-badge&logo=wakatime&logoColor=white" alt="Connect WakaTime" />
   </a>
 </p>
 
@@ -617,39 +634,136 @@ GitHub is an engineering and collaboration platform, not just a source-code stor
 
 # 15 — AUTOMATION & DEVOPS
 
+Automation should make engineering more reliable—not merely make a repository look busy. The goal is repeatable builds, fast feedback, controlled releases, and recoverable deployments.
+
+### Automation Lifecycle
+
+```text
+CODE CHANGE
+    ↓
+PULL REQUEST
+    ↓
+STATIC CHECKS ── FORMAT / LINT / TYPE CHECK
+    ↓
+TEST MATRIX ─── UNIT / INTEGRATION / PLATFORM
+    ↓
+BUILD ───────── REPRODUCIBLE ARTIFACTS
+    ↓
+SECURITY ────── DEPENDENCIES / SECRETS / SBOM
+    ↓
+REVIEW & APPROVAL
+    ↓
+RELEASE ─────── TAG / CHANGELOG / ASSETS
+    ↓
+DEPLOY ──────── STAGING → PRODUCTION
+    ↓
+OBSERVE ─────── HEALTH / LOGS / METRICS
+```
+
 ### Continuous Integration
 
-- Automated testing
-- Build verification
-- Code formatting
-- Linting
-- Dependency updates
-- Release automation
-- Documentation generation
-- Deployment workflows
-- Scheduled tasks
-- Repository maintenance
+- Validate every relevant pull request.
+- Run unit, integration, and regression tests.
+- Enforce formatting, linting, and type checks where applicable.
+- Build on supported operating systems and runtime versions.
+- Cache dependencies safely to reduce redundant work.
+- Upload test reports, coverage, and build artifacts.
+- Cancel superseded runs when a newer commit arrives.
+- Keep required checks explicit and branch protection aligned.
+
+### Continuous Delivery & Release Engineering
+
+- Separate validation from production deployment.
+- Use protected environments and approval gates.
+- Publish immutable, versioned artifacts.
+- Use semantic versioning where the project follows it.
+- Generate release notes from reviewed changes.
+- Verify package contents before publishing.
+- Maintain rollback instructions and a previous known-good release.
+- Never publish secrets or environment-specific configuration in artifacts.
+
+### Workflow Design Patterns
+
+| Pattern | Why it matters |
+|---|---|
+| Matrix builds | Test multiple runtimes and operating systems |
+| Dependency caching | Reduce repeated installation work |
+| Artifact hand-off | Build once, test and deploy the same output |
+| Concurrency groups | Prevent stale or conflicting runs |
+| Reusable workflows | Share trusted pipeline logic |
+| Scheduled workflows | Run maintenance and periodic checks |
+| Manual dispatch | Support controlled operator actions |
+| Environment protection | Gate sensitive deployments |
+| OIDC authentication | Prefer short-lived cloud credentials |
+| Failure notifications | Make broken automation visible |
 
 ### Automation Stack
 
 <p>
-  <img src="https://skillicons.dev/icons?i=githubactions,docker,git,linux,bash,powershell" />
+  <img src="https://skillicons.dev/icons?i=githubactions,docker,git,linux,bash,powershell" alt="GitHub Actions, Docker, Git, Linux, Bash and PowerShell" />
 </p>
 
-### Automated Workflows
+### Workflow Catalogue
 
-| Workflow | Function |
+| Workflow | Intended responsibility |
 |---|---|
-| CI | Build and test projects |
-| CD | Deployment automation |
+| CI | Validate code changes |
+| CD | Deploy approved builds |
+| Test Matrix | Verify supported platforms and runtimes |
+| Quality Gate | Run formatting, linting, and static analysis |
+| Coverage | Publish test coverage reports |
 | Snake | Generate contribution animation |
-| Skyline | Generate 3D contribution art |
-| Metrics | Update profile statistics |
-| WakaTime | Update coding analytics |
-| Release | Publish release assets |
-| Weekly Report | Summarize development activity |
-| Dependency Update | Keep dependencies updated |
-| Security Scan | Analyze vulnerabilities |
+| Skyline | Generate 3D contribution artwork |
+| Metrics | Refresh profile statistics |
+| Weekly Report | Summarize repository activity |
+| Dependency Review | Detect risky dependency changes |
+| Security Scan | Run configured security analysis |
+| Release | Package and publish versioned artifacts |
+| Documentation | Validate or publish project documentation |
+| Maintenance | Perform safe, scheduled repository housekeeping |
+
+*This catalogue describes workflow capabilities and intended responsibilities. A workflow should be treated as active only when its implementation exists in the repository and its run history confirms it.*
+
+### Infrastructure & Deployment Concepts
+
+- Containers: Docker and Docker Compose
+- Orchestration: Kubernetes (when project scale justifies it)
+- Infrastructure as Code: Terraform and Ansible
+- Deployment strategies: rolling, blue-green, and canary
+- Preview environments for pull requests
+- Health checks, readiness checks, and smoke tests
+- Artifact registries and image registries
+- Configuration separation across development, staging, and production
+
+### Operational Reliability
+
+- Define service-level indicators before claiming reliability targets.
+- Monitor availability, latency, error rates, and resource saturation.
+- Keep structured logs and actionable alerts.
+- Document incident response and recovery procedures.
+- Test backups and restoration—not just backup creation.
+- Track deployment frequency and change-failure rate when data exists.
+
+### Secrets & Supply-Chain Hygiene
+
+- Store credentials in approved secret stores, never in source files.
+- Use least-privilege workflow permissions.
+- Pin third-party actions to reviewed immutable references where practical.
+- Prefer short-lived OIDC credentials over long-lived cloud keys.
+- Review dependency changes and generate an SBOM for distributable software.
+- Sign and verify release artifacts when the project requires provenance.
+
+### Useful References
+
+- [GitHub Actions Documentation](https://docs.github.com/actions)
+- [GitHub Actions Security Hardening](https://docs.github.com/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions)
+- [Docker Documentation](https://docs.docker.com/)
+- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
+- [Kubernetes Documentation](https://kubernetes.io/docs/)
+- [OpenTelemetry](https://opentelemetry.io/docs/)
+- [SLSA Supply-chain Levels](https://slsa.dev/)
+
+---
 
 ---
 
@@ -834,6 +948,410 @@ A visitor counter and geographic analytics integration can help understand the r
 - Technical communities
 
 *Geographic visitor analytics require a privacy-conscious external analytics provider. GitHub does not expose a built-in public world visitor map for profile READMEs.*
+
+---
+
+# 22 — TECHNICAL PUBLICATIONS
+
+A home for work that can be inspected, reproduced, challenged, and improved.
+
+### Publication Types
+
+- Technical articles and engineering essays
+- Research notes and preprints
+- Design proposals and architecture decision records
+- Tutorials and implementation walkthroughs
+- Benchmark reports with methodology and raw data
+- Postmortems and lessons learned
+
+### Publication Quality Bar
+
+Every substantial publication should state its problem, assumptions, method, evidence, limitations, references, and revision date. A hypothesis is not a result; an experiment is not a proof.
+
+[Browse public repositories and documentation →](https://github.com/EverlastingUc?tab=repositories)
+
+---
+
+# 23 — CERTIFICATIONS & CREDENTIALS
+
+A record of verifiable credentials, completed programs, and externally assessed achievements.
+
+| Record | What belongs here |
+|---|---|
+| Certifications | Issuer, credential title, issue date, verification URL |
+| Learning programs | Provider, curriculum, completion evidence |
+| Developer profiles | Public profile and earned milestones |
+| Competitions | Event, category, result, and year |
+| Badges | Issuer and verifiable badge URL |
+
+Only completed and verifiable credentials should be listed. In-progress learning belongs in the learning section, not in a completed-certifications list.
+
+---
+
+# 24 — LEARNING & SKILL DEVELOPMENT
+
+Engineering ability is built through deliberate practice, implementation, feedback, and revision.
+
+### Learning Loop
+
+```text
+STUDY → IMPLEMENT → TEST → EXPLAIN → REVIEW → REPEAT
+```
+
+### Practice Platforms
+
+- [Exercism](https://exercism.org/) — language practice and mentoring
+- [LeetCode](https://leetcode.com/) — algorithmic problem solving
+- [Codeforces](https://codeforces.com/) — competitive programming
+- [Codewars](https://www.codewars.com/) — kata-based practice
+- [Frontend Mentor](https://www.frontendmentor.io/) — frontend projects
+- [CSSBattle](https://cssbattle.dev/) — CSS precision challenges
+- [CodinGame](https://www.codingame.com/) — programming puzzles and games
+- [Google Developer Program](https://developers.google.com/profile) — developer learning and credentials
+- [Roadmap.sh](https://roadmap.sh/) — structured topic maps
+
+### Evidence of Learning
+
+Prefer repositories, solved problems, notes, demos, tests, and technical explanations over unsupported skill labels.
+
+---
+
+# 25 — TESTING LABORATORY
+
+Testing is an engineering feedback system. The right test strategy depends on the failure modes and public contract of each project.
+
+| Test layer | Main purpose |
+|---|---|
+| Unit | Verify isolated functions and components |
+| Integration | Verify boundaries between modules and services |
+| End-to-end | Verify user-visible workflows |
+| Regression | Prevent previously fixed defects from returning |
+| Property-based | Explore broad input spaces and invariants |
+| Fuzz | Discover crashes and unexpected parser/input behavior |
+| Compatibility | Verify supported runtimes, browsers, and platforms |
+| Performance | Detect unacceptable latency or resource use |
+
+### Testing Principles
+
+- Test public behavior, not private implementation details.
+- Include boundary values, invalid input, and failure paths.
+- Make tests deterministic and isolate external services.
+- Keep fixtures small, explicit, and maintainable.
+- Measure coverage, but do not confuse coverage with correctness.
+- Reproduce bugs with a failing test before fixing them when practical.
+
+### Useful Tools
+
+- [Vitest](https://vitest.dev/)
+- [Jest](https://jestjs.io/)
+- [Playwright](https://playwright.dev/)
+- [pytest](https://docs.pytest.org/)
+- [Criterion.rs](https://bheisler.github.io/criterion.rs/book/)
+- [GoogleTest](https://google.github.io/googletest/)
+
+---
+
+# 26 — PERFORMANCE ENGINEERING
+
+Performance work begins with measurement—not intuition.
+
+### Areas of Investigation
+
+- Algorithmic complexity and data structures
+- CPU time, memory use, and allocation patterns
+- Startup time and cold-start behavior
+- Throughput, latency, and tail latency
+- Network round trips and payload size
+- Rendering, frame time, and responsiveness
+- Binary size and build time
+- Database query plans and cache behavior
+
+### Benchmark Protocol
+
+1. Define the question and metric.
+2. Record hardware, software, runtime, and configuration.
+3. Establish a baseline.
+4. Use representative inputs and repeated runs.
+5. Report variance and measurement limitations.
+6. Change one relevant variable at a time.
+7. Publish the method alongside the result.
+
+Never publish a performance claim without enough context to reproduce or interpret it.
+
+---
+
+# 27 — API & INTEGRATION HUB
+
+A catalogue of interfaces that allow projects to communicate with tools, services, and other systems.
+
+### Integration Domains
+
+- REST and GraphQL APIs
+- Webhooks and event-driven systems
+- OAuth 2.0 and OpenID Connect
+- Authentication and authorization
+- Rate limiting and retry policies
+- Pagination and versioning
+- Serialization: JSON, binary formats, and protocol schemas
+- SDKs, command-line clients, and generated API clients
+
+### API Design Checklist
+
+- Consistent resource naming and HTTP semantics
+- Explicit request and response schemas
+- Stable error formats and meaningful status codes
+- Authentication scopes and least privilege
+- Idempotency for retryable operations
+- Timeouts, backoff, and rate-limit handling
+- Versioning and deprecation policy
+- Examples and executable tests
+
+---
+
+# 28 — CLOUD & DEPLOYMENT ENGINEERING
+
+Deployment is a controlled transition from a tested artifact to a running system.
+
+### Deployment Environments
+
+| Environment | Purpose |
+|---|---|
+| Local | Fast individual development |
+| Preview | Review a proposed change in isolation |
+| Development | Integrate ongoing work |
+| Staging | Validate production-like behavior |
+| Production | Serve real users and workloads |
+
+### Deployment Controls
+
+- Environment-specific configuration
+- Secret isolation and access controls
+- Health and readiness checks
+- Database migration planning
+- Smoke tests after deployment
+- Progressive rollout where appropriate
+- Rollback or roll-forward procedure
+- Audit trail for production changes
+
+### Cloud & Hosting References
+
+- [Cloudflare Developers](https://developers.cloudflare.com/)
+- [Vercel Documentation](https://vercel.com/docs)
+- [AWS Documentation](https://docs.aws.amazon.com/)
+- [Microsoft Azure Documentation](https://learn.microsoft.com/azure/)
+- [Google Cloud Documentation](https://cloud.google.com/docs)
+
+---
+
+# 29 — PACKAGE & RELEASE REGISTRY
+
+Software distribution deserves the same discipline as software development.
+
+### Package Engineering
+
+- Clear package names and ownership
+- Semantic versioning and compatibility policy
+- Explicit runtime and platform support
+- Dependency minimization
+- License and notice files
+- Package contents inspection
+- Reproducible release procedure
+- Deprecation and migration guidance
+
+### Ecosystem Registries
+
+- [npm](https://www.npmjs.com/)
+- [ crates.io](https://crates.io/)
+- [PyPI](https://pypi.org/)
+- [Maven Central](https://central.sonatype.com/)
+- [NuGet](https://www.nuget.org/)
+- [GitHub Packages](https://github.com/features/packages)
+
+A package should only be described as published after its registry page and version are publicly available.
+
+---
+
+# 30 — DATABASE ENGINEERING
+
+Data systems require explicit schemas, consistency expectations, migration discipline, and recovery planning.
+
+### Areas of Study
+
+- Relational modeling and normalization
+- SQL and query planning
+- Index design and query optimization
+- Transactions and isolation levels
+- Constraints and data integrity
+- Schema migrations and rollback strategy
+- Replication, backups, and restoration
+- Caching and data lifecycle management
+- Document and key-value data models
+
+### Database References
+
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
+- [SQLite Documentation](https://www.sqlite.org/docs.html)
+- [MongoDB Manual](https://www.mongodb.com/docs/manual/)
+- [Redis Documentation](https://redis.io/docs/latest/)
+
+---
+
+# 31 — NETWORKING & DISTRIBUTED SYSTEMS
+
+A systems-level understanding of communication, failure, and coordination.
+
+### Topics
+
+- TCP/IP, UDP, DNS, and routing
+- HTTP/1.1, HTTP/2, and HTTP/3
+- TLS and certificate validation
+- Sockets and network programming
+- Proxies, load balancers, and reverse proxies
+- Distributed state and consistency models
+- Queues, streams, and message delivery
+- Timeouts, retries, backpressure, and failure detection
+- Observability across service boundaries
+
+### Distributed Systems Rule
+
+Assume networks can be slow, messages can be duplicated, processes can fail, and clocks can disagree. Design protocols and recovery paths accordingly.
+
+---
+
+# 32 — ACCESSIBILITY & USER EXPERIENCE
+
+A technically impressive system is incomplete if people cannot use it effectively.
+
+### Quality Dimensions
+
+- Keyboard accessibility
+- Semantic HTML and correct document structure
+- Screen-reader compatibility
+- Sufficient contrast and readable typography
+- Responsive layouts
+- Clear loading, empty, and error states
+- Predictable navigation and focus behavior
+- Reduced-motion support
+- Internationalization and localization
+
+### References
+
+- [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/)
+- [WAI-ARIA](https://www.w3.org/WAI/ARIA/)
+- [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
+
+---
+
+# 33 — TECHNICAL DOCUMENTATION
+
+Documentation is part of the product interface and part of the engineering process.
+
+### Documentation Set
+
+| Document | Responsibility |
+|---|---|
+| README | Purpose, quick start, and project overview |
+| Architecture | System structure and major boundaries |
+| ADRs | Context and rationale behind technical decisions |
+| API reference | Contracts, parameters, and responses |
+| Tutorials | Guided learning paths |
+| How-to guides | Task-oriented procedures |
+| Troubleshooting | Symptoms, causes, and remedies |
+| Changelog | User-visible changes |
+| Security policy | Vulnerability reporting process |
+| Contributing guide | Development and review workflow |
+
+### Documentation Standards
+
+- Keep instructions executable and current.
+- Distinguish required steps from optional configuration.
+- Include expected output and common failure modes.
+- Explain why important decisions were made.
+- Link to authoritative references.
+- Version documentation when behavior differs by release.
+
+---
+
+# 34 — ALGORITHMS & COMPUTER SCIENCE
+
+Foundational computer science concepts behind reliable software.
+
+### Core Areas
+
+- Data structures and algorithm analysis
+- Sorting, searching, and graph traversal
+- Dynamic programming and greedy methods
+- Automata theory and formal languages
+- Compiler construction and parsing
+- Operating systems and concurrency
+- Computer architecture and memory hierarchy
+- Complexity theory and computability
+- Cryptographic foundations
+- Programming language semantics
+
+### Learning Standard
+
+For each important algorithm, aim to understand its invariant, correctness argument, complexity, trade-offs, and practical failure cases—not merely memorize an implementation.
+
+---
+
+# 35 — ENGINEERING ROADMAP
+
+A living map of direction, not a promise that every idea is already implemented.
+
+### Current Project Portfolio
+
+| Project | Focus | Public evidence |
+|---|---|---|
+| Valency | Programming language design | Link the canonical repository when available |
+| Bootstune | Systems-oriented language exploration | Link the canonical repository when available |
+| Phoneal | Experimental engineering | Link the canonical repository when available |
+| Relativity.js | Special-relativity calculations | Link the canonical repository when available |
+| Luminosity OS | Kernel and operating-system engineering | Link the canonical repository when available |
+| Random | Prototypes and experiments | Link individual experiment repositories |
+
+### Milestone Categories
+
+- Specification and design
+- First working implementation
+- Automated tests
+- Documentation and examples
+- Public release
+- External feedback
+- Stability and maintenance
+
+### Update Discipline
+
+Replace this table's placeholder descriptions with canonical repository links and evidence as projects become public. Do not imply that a planned milestone has been completed.
+
+---
+
+# 36 — PRINCIPLES & STANDARDS
+
+### Engineering Principles
+
+1. Understand the problem before selecting a tool.
+2. Prefer simple designs until complexity is justified.
+3. Make assumptions explicit.
+4. Validate inputs and define failure behavior.
+5. Measure before optimizing.
+6. Automate repeatable checks.
+7. Document decisions and trade-offs.
+8. Treat security and accessibility as design requirements.
+9. Separate evidence from speculation.
+10. Revise conclusions when better evidence appears.
+
+### Research Integrity
+
+- Label hypotheses, models, simulations, and established results distinctly.
+- Cite prior work and credit contributors.
+- Publish methods and limitations with conclusions.
+- Preserve reproducible data and code where possible.
+- Welcome falsification, peer review, and constructive criticism.
+
+### Definition of Done
+
+A feature is not complete merely because it works once. Completion should account for tests, edge cases, documentation, security implications, usability, and maintainability.
 
 ---
 
