@@ -347,6 +347,14 @@ The 3D contribution skyline is generated through a separate GitHub Actions workf
   </a>
 </p>
 
+### Live WakaTime Card
+
+After enabling public profile sharing, replace `YOUR_WAKATIME_USERNAME` with the exact WakaTime username:
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=YOUR_WAKATIME_USERNAME&layout=compact&theme=transparent&hide_border=true&title_color=B69CFF&text_color=CCCCCC" alt="WakaTime coding activity — configure username to activate" />
+</p>
+
 ### Coding Metrics
 
 - Total coding time
@@ -550,6 +558,21 @@ EXECUTION
 ```
 
 Diagrams can be maintained using Mermaid, SVG, or dedicated documentation files.
+
+### Version-Controlled Architecture Diagram
+
+This Mermaid diagram is rendered directly by GitHub from the README source:
+
+```mermaid
+flowchart LR
+    U["User / Client"] --> UI["Interface"]
+    UI --> API["Application API"]
+    API --> S["Service layer"]
+    S --> DB[("Database")]
+    S --> EXT["External integrations"]
+```
+
+For system planning, sketch the first draft in Excalidraw, then convert stable flows into Mermaid so the architecture remains reviewable in pull requests.
 
 ---
 
@@ -899,25 +922,135 @@ Platforms for improving engineering skills:
 
 # 19 — DEVELOPER UTILITIES
 
-### Developer Tools
+### Developer Tools — Applied in This Profile
 
-| Tool | Purpose |
+These tools are not just collected as bookmarks: the examples below show where they are used and how they fit into a real engineering workflow.
+
+| Tool | How it is used here |
 |---|---|
-| [Can I Use](https://caniuse.com/) | Browser compatibility |
-| [MDN](https://developer.mozilla.org/) | Web documentation |
-| [DevDocs](https://devdocs.io/) | API documentation |
-| [Regex101](https://regex101.com/) | Regular expressions |
-| [JSON Formatter](https://jsonformatter.org/) | JSON formatting |
-| [Carbon](https://carbon.now.sh/) | Code images |
-| [Excalidraw](https://excalidraw.com/) | Diagrams |
-| [Mermaid](https://mermaid.js.org/) | Architecture diagrams |
-| [Shields.io](https://shields.io/) | Project badges |
-| [Simple Icons](https://simpleicons.org/) | Brand icons |
-| [Devicon](https://devicon.dev/) | Technology icons |
-| [Skill Icons](https://skillicons.dev/) | Technology visuals |
-| [WakaTime](https://wakatime.com/) | Coding analytics |
-| [Ray.so](https://ray.so/) | Code screenshots |
-| [Roadmap.sh](https://roadmap.sh/) | Developer learning paths |
+| [Can I Use](https://caniuse.com/) | Check browser support before adopting a web API or CSS feature; record compatibility as part of frontend review. |
+| [MDN](https://developer.mozilla.org/) | Primary reference for HTML, CSS, JavaScript and Web APIs; use it to verify syntax, browser behavior and examples. |
+| [DevDocs](https://devdocs.io/) | Fast, searchable offline-friendly API reference while implementing features. |
+| [Regex101](https://regex101.com/) | Build and test regular expressions against sample input before moving a pattern into source code. |
+| [JSON Formatter](https://jsonformatter.org/) | Validate, pretty-print and inspect API payloads and configuration files. |
+| [Carbon](https://carbon.now.sh/) | Turn a reviewed code snippet into a consistent, shareable code image for project documentation. |
+| [Excalidraw](https://excalidraw.com/) | Sketch component boundaries, request flows and early system designs before implementation. |
+| [Mermaid](https://mermaid.js.org/) | Keep architecture and process diagrams version-controlled directly inside Markdown. |
+| [Shields.io](https://shields.io/) | Generate live or manually maintained status, license, version and technology badges. |
+| [Simple Icons](https://simpleicons.org/) | Use recognizable brand SVGs in technology and integration documentation. |
+| [Devicon](https://devicon.dev/) | Select language, framework and tooling icons for technical inventories. |
+| [Skill Icons](https://skillicons.dev/) | Render the grouped technology visuals already used in the Engineering Toolkit and Skills Matrix. |
+| [WakaTime](https://wakatime.com/) | Collect editor activity and language/project time; the live card below becomes active after account configuration. |
+| [Ray.so](https://ray.so/) | Create an alternate polished code screenshot when preparing project notes or release announcements. |
+| [Roadmap.sh](https://roadmap.sh/) | Choose a focused learning path, break it into topics, then track implementation evidence in repositories. |
+
+### Compatibility Review — Can I Use
+
+Before using a browser feature, check its support rather than assuming every visitor has a modern browser.
+
+| Feature to evaluate | Review question |
+|---|---|
+| CSS Container Queries | Do the target browsers support the required query behavior? |
+| CSS Subgrid | Is support sufficient for the project's audience? |
+| WebGPU | Is a fallback needed for unsupported devices? |
+| View Transitions API | Does progressive enhancement preserve navigation without it? |
+| JavaScript API | Is feature detection or a fallback required? |
+
+Useful implementation pattern:
+
+```js
+if ("someFeature" in window) {
+  // Use the enhanced experience.
+} else {
+  // Keep the core experience functional.
+}
+```
+
+The feature names above are review prompts, not claims that every project uses them. Check each one on Can I Use and verify behavior in the actual target browsers.
+
+### Documentation Lookup — MDN + DevDocs
+
+A practical lookup sequence for a web implementation:
+
+1. Find the API or element in MDN.
+2. Read its syntax, parameters, return value and browser-compatibility notes.
+3. Cross-check the API in DevDocs while coding.
+4. Build a minimal reproduction and test the behavior.
+5. Document assumptions and fallbacks.
+
+Examples: [MDN — Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), [MDN — CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout), [DevDocs — JavaScript](https://devdocs.io/javascript/).
+
+### Regex & JSON Workbench
+
+**Regex101 test case:** [Open a JavaScript regex workspace](https://regex101.com/?regex=%5E%5Ba-zA-Z0-9._%25%2B-%5D%2B%40%5Ba-zA-Z0-9.-%5D%2B%5C.%5Ba-zA-Z%5D%7B2%2C%7D%24&flavor=javascript)
+
+Use it to inspect matches, capture groups and edge cases. A regex that passes one example is not automatically production-ready; test empty input, malformed input and Unicode cases too.
+
+**JSON validation example:**
+
+```json
+{
+  "project": "Relativity.js",
+  "module": "special-relativity",
+  "runtimeDependencies": 0,
+  "status": "in-development"
+}
+```
+
+Paste API responses or configuration into [JSON Formatter](https://jsonformatter.org/) to validate and inspect nested structures. Never paste secrets, access tokens or private user data into third-party tools.
+
+### Diagrams — Mermaid + Excalidraw
+
+The compiler pipeline below is a real Mermaid diagram rendered by GitHub:
+
+```mermaid
+flowchart TD
+    A["Source code"] --> B["Lexer"]
+    B --> C["Parser"]
+    C --> D["Abstract syntax tree"]
+    D --> E["Semantic analysis"]
+    E --> F["Intermediate representation"]
+    F --> G["Code generation"]
+    G --> H["Execution"]
+```
+
+Use Mermaid for diagrams that belong in source control and Excalidraw for early visual exploration, whiteboarding and diagrams that need free-form layout. Export final diagrams into the relevant project's documentation.
+
+### Code Image Workflow — Carbon + Ray.so
+
+1. Select a small, self-contained snippet.
+2. Remove credentials, tokens, private URLs and personal data.
+3. Format and annotate the code in the source file first.
+4. Render a presentation image with [Carbon](https://carbon.now.sh/) or [Ray.so](https://ray.so/).
+5. Keep the actual code in the repository; the image is supplementary, never the only copy.
+
+### Badges & Technology Identity — Shields + Simple Icons + Devicon
+
+The README already uses Shields.io badges and Skill Icons. These additional examples show how to embed individual brand and technology assets:
+
+<p align="center">
+  <img src="https://img.shields.io/badge/README-Markdown-000000?style=for-the-badge&logo=readme&logoColor=white" alt="README Markdown badge" />
+  <img src="https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111" alt="JavaScript ES Modules badge" />
+  <img src="https://img.shields.io/badge/License-MIT-9B7BFF?style=for-the-badge" alt="MIT license style badge example" />
+</p>
+
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" width="44" height="44" alt="Rust Devicon" />
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" width="40" height="40" alt="GitHub Simple Icon" />
+  <img src="https://skillicons.dev/icons?i=js,ts,python,rust,cpp&theme=dark" alt="Skill Icons language group" />
+</p>
+
+Use real project metadata for release badges. The examples above are visual samples and must not be interpreted as proof that a package has been published or that a particular license has been assigned to every project.
+
+### Learning Path — Roadmap.sh
+
+Use [Roadmap.sh](https://roadmap.sh/) as a topic map, not as a certificate or skill claim:
+
+- Select one roadmap relevant to the current project.
+- Break the next topic into a small implementation task.
+- Build a working example and add tests.
+- Record the result in a repository or engineering journal.
+- Revisit the roadmap when the project exposes a knowledge gap.
 
 ### Daily Developer Inspiration
 
@@ -1249,6 +1382,12 @@ A technically impressive system is incomplete if people cannot use it effectivel
 - [WAI-ARIA](https://www.w3.org/WAI/ARIA/)
 - [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
 
+### Browser Support & Verification
+
+Use [Can I Use](https://caniuse.com/) to check the compatibility of CSS and Web Platform features before relying on them. Then verify the behavior in real target browsers; compatibility tables do not replace testing.
+
+Accessibility review should also check whether enhanced interactions preserve keyboard operation, focus visibility, reduced-motion preferences and usable fallbacks when a newer browser feature is unavailable.
+
 ---
 
 # 33 — TECHNICAL DOCUMENTATION
@@ -1278,6 +1417,15 @@ Documentation is part of the product interface and part of the engineering proce
 - Explain why important decisions were made.
 - Link to authoritative references.
 - Version documentation when behavior differs by release.
+
+### Documentation Production Workflow
+
+- Verify HTML, CSS, JavaScript and Web API behavior against [MDN](https://developer.mozilla.org/) and [DevDocs](https://devdocs.io/).
+- Keep architecture diagrams as Mermaid source in Markdown so changes can be reviewed with code.
+- Use Excalidraw for exploratory diagrams, then export stable decisions into the project's documentation.
+- Use Carbon or Ray.so only for supplementary code illustrations; always retain copyable source code beside the image.
+- Validate JSON examples with a formatter and test regex examples in Regex101 before documenting them.
+- Use Shields.io for metadata that can be verified from the repository or release process; avoid decorative badges that imply unearned status.
 
 ---
 
